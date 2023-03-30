@@ -117,10 +117,6 @@ function CloseApp() {
 }
 # Invoke Function CloseApp with Array appName
 CloseApp appName[@]
-# Close Jamf Connect Windows (Not Working Currently)
-#/usr/bin/osascript -e 'tell application "Jamf Connect" to close windows
-#    with timeout of 5 seconds
-#    end timeout'
 ### Announce Completion ###
 osascript -e "set Volume 5"
 say "OMG! This is the final script."
