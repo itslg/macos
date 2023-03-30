@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+####################################
+#Thompson Reuters EndNote X8 For Mac
+####################################
+
+#PATH=/usr/gnu/bin:/usr/local/bin:/bin:/usr/bin:.
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+declare zipLocation='/tmp/AirWatch/'
+declare zipName='EndNote.zip'
+
+#######################
+#Pre-Installation Tasks
+#######################
+rm -R -f "/Applications/EndNote X8"
+
+##############
+#Extract *.zip
+##############
+bsdtar -x -f "$zipLocation$zipName" -C /tmp/AirWatch
+
+#####################
+#Copy / Install *.app
+#####################
+cp -R -f "/tmp/AirWatch/EndNote X8" "/Applications"
+chown -R -f root:wheel "/Applications/EndNote X8"
+chmod -R -f 775 "/Applications/EndNote X8"
+chmod -R -f +x "/Applications/EndNote X8"
+chmod -R -f 555 "/Applications/EndNote X8/.license.dat"
+
+########################
+#Post-Installation Tasks
+########################
+rm -R -f "/tmp/AirWatch"
+
+############
+#START NOTES
+############
+
+#Run as command in AirWatch with:
+#sh /tmp/AirWatch/endnoteX8.airwatch > /tmp/airwatch.log 2>&1
+#OR
+#sh /tmp/AirWatch/endnoteX8.airwatch &> /tmp/airwatch.log
+
+##################################################################################################
+#Reference:
+##################################################################################################
+#<https://derflounder.wordpress.com/2016/11/23/deploying-and-licensing-endnote-x8/>
+#<https://derflounder.wordpress.com/2016/11/15/preparing-endnote-x8-for-deployment-using-autopkg/>
+##################################################################################################
+
+##########
+#END NOTES
+##########

@@ -1,0 +1,12 @@
+
+To enable remote login for members of the admin group enter:
+Sets Remote Login: On
+Does not set On in Sysprefs List
+
+sudo systemsetup -setremotelogin on
+
+
+To Enable Remote Management for Admin Users Enter:
+
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -on -users admin -privs -all -restart -agent -menu
+

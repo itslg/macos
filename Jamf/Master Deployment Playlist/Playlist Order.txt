@@ -1,0 +1,46 @@
+Playlist Order:
+
+# Proceed Setup Assistant until home screen
+# Laptop Receives Group - NO 365, 365 begins installing.
+
+Section One: Core Services
+SET Root Passwords:
+	- its
+	- badmin
+ARD Users
+	- its 
+	- radmin
+	- badmin
+	- sadmin
+
+Section Two: Tweaking & Optimisation
+SET Fullname Login
+SET AdminHostInfo
+SET ExternalDrives Desktop
+DISABLE Timemachine Popups
+SET Print access for ALL
+SET Print Defaults A4
+CREATE Printer Proxy Redirect
+
+Section Three: Jamf Policies
+Create Local User Admins
+Set Wallpaper
+Install Rosetta
+Unlock Preferences Panes
+Set Asset Tag Pop up
+
+Install GoogleChrome
+Install Firefox
+Install KalturaCapture
+Install Zoom Silicon Smart
+Install Zoom Intel Smart
+Kill Zoom after Sleep
+Install Cortex
+Install GlobalProtect
+Install MS Teams
+Set Dock Layout
+
+Announce Completion
+
+\d{1,3}
+20(...)(0[0-9]|1[0-9]|[0-9])
