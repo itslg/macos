@@ -5,15 +5,10 @@
 SetupAssistance_process=$(/bin/ps auxww | grep -q "[S]etup Assistant.app")
 while [ $? -eq 0 ]
 do
-    /bin/echo "Setup Assistant Still Running... Sleep for 2 seconds..."
+    /bin/echo "Setup Assistant Still Running... Sleep for 120 seconds..."
     /bin/sleep 120
     SetupAssistance_process=$(/bin/ps auxww | grep -q "[S]etup Assistant.app")
 done
-osascript -e "display dialog\"Installing Avondale Standard Operating Environment Configuration"\"
-if [ "$?" != "0" ] ; then
-   echo "User aborted. Exiting..."
-   exit
-fi
 ########################[ Section Two: Tweaking & Optimisation ]#########################
 ### Defaults Write Commands ###
 defaultwrite=(
