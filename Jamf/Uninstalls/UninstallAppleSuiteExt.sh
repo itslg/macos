@@ -7,10 +7,24 @@
 ### Use: Generic / Entity-Agnostic              ###
 ### Notes: Removes Extended Suite Applications  ###
 ###################################################
-
-# Remove - Remove Forcibly the following Applications
-rm -rf /Applications/Pages.app
-rm -rf /Applications/Keynote.app
-rm -rf /Applications/Numbers.app
-rm -rf /Applications/iMovie.app
-rm -rf /Applications/GarageBand.app
+DirPath=/Applications/
+appName=(
+    'Pages'
+    'Keynote'
+    'Numbers'
+    'iMovie'
+    'Garageband'
+)
+function UninstallApp() {
+    declare -a appName=("${!1}")
+    for app in "${appName[@]}"
+    do
+        if [ -d $DirPath$app".app" ]; then
+            rm -rf $DirPath$app".app" && echo "Uninstalling "$app".app"
+        else
+            echo $app" is not installed, proceeding with script..."
+        fi
+    done
+}
+# Invoke Function CloseApp with Array appName
+UninstallApp appName[@]
