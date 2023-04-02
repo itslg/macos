@@ -7,4 +7,12 @@
 ### Use: Generic / Entity-Agnostic              ###
 ### Notes: Calls Interal GP Uninstall Script    ###
 ###################################################
-/Applications/GlobalProtect.app/Contents/Resources/uninstall_gp.sh
+DirPath=/Applications/
+App=GlobalProtect.app
+ScriptPath=/Contents/Resources/uninstall_gp.sh
+if [ -f $DirPath$App$ScriptPath ];
+then $DirPath$ScriptPath && echo "Starting Uninstaller"
+else echo "Uninstall Script not found..."
+if [ -d $DirPath$App.app];
+then rm -rf $DirPath$App.app && echo "Manually Removing "$App
+else echo $App "not found..."
