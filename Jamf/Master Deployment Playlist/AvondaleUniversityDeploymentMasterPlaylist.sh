@@ -9,7 +9,7 @@ do
     /bin/sleep 120
     SetupAssistance_process=$(/bin/ps auxww | grep -q "[S]etup Assistant.app")
 done
-osascript -e "display dialog\"Installing Avondale Standard Operating Environment Configuration"\"
+osascript -e "display dialog\"Ready to install 'Avondale Universities - Standard Operating Environment'?"\"
 if [ "$?" != "0" ] ; then
    echo "User aborted. Exiting..."
    exit
